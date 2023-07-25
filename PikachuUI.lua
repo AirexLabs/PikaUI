@@ -1,6 +1,6 @@
 --[[
 
-Pepper's ArrayField Interface Suite
+Pepper's Modified ArrayField Interface Suite
 by Pepper
 
 Original by Sirius
