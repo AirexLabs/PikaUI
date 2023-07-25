@@ -2314,15 +2314,21 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 						local Success, Response = pcall(function()
 							if #OptionsTable > 1 then
+								print("DOING SHIT")
 								local callbackTable = {}
 								for i, v in pairs(OptionsTable) do
 									table.insert(callbackTable, v.Option.Name)
 								end
 								DropdownSettings.Callback(callbackTable)
 							else
-								DropdownSettings.Callback(Option)
+								local callbackTable = {}
+								for i, v in pairs(OptionsTable) do
+									table.insert(callbackTable, v.Option.Name)
+								end
+								DropdownSettings.Callback(tostring(callbackTable[1]))
 							end
 						end)
+
 						if not Success then
 							Error('Callback Error')
 							print("ArrayField | "..DropdownSettings.Name.." Callback Error " ..tostring(Response))
