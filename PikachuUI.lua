@@ -2277,6 +2277,9 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 						if Selected == Option then
 							IsSelected = true
 							OptionInTable.Selected = true
+							if not table.find(OptionsTable, OptionInTable) then
+								table.insert(OptionsTable, OptionInTable)
+							end
 							table.insert(DropdownSettings.Items.Selected,OptionInTable)
 							DropdownSettings.Items.Selected[table.find(DropdownSettings.Items.Selected,OptionInTable)].Selected = true
 						end
