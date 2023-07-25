@@ -2306,7 +2306,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					if DropdownSettings.Locked then return end
 					if OptionInTable.Selected then
 						OptionInTable.Selected = false
-						print("weeee")
 						table.remove(OptionsTable, table.find(OptionsTable, OptionInTable))
 						table.remove(DropdownSettings.Items.Selected,table.find(DropdownSettings.Items.Selected,OptionInTable))
 						RefreshSelected()
@@ -2315,7 +2314,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 						local Success, Response = pcall(function()
 							if #OptionsTable > 1 then
-								print("DOING SHIT")
 								local callbackTable = {}
 								for i, v in pairs(OptionsTable) do
 									table.insert(callbackTable, v.Option.Name)
