@@ -2115,7 +2115,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			local Dropdown = Elements.Template.Dropdown:Clone()
 			local SearchBar = Dropdown.List["-SearchBar"]
 			local Required = 1
-			--local OptionsTable = {}
+			local OptionsTable = {}
 			--local Debounce = false
 			DropdownSettings.Items = {
 				Selected = {Default = DropdownSettings.Selected or nil}
@@ -2303,7 +2303,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					if DropdownSettings.Locked then return end
 					if OptionInTable.Selected then
 						OptionInTable.Selected = false
-						--table.remove(OptionsTable, table.find(OptionsTable, OptionInTable))
+						table.remove(OptionsTable, table.find(OptionsTable, OptionInTable))
 						table.remove(DropdownSettings.Items.Selected,table.find(DropdownSettings.Items.Selected,OptionInTable))
 						RefreshSelected()
 						TweenService:Create(DropdownOption, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(30, 30, 30)}):Play()
@@ -2318,21 +2318,21 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 						DropdownSettings.Items.Selected = {OptionInTable}
 						Dropdown.Selected.Text = Option.Name or Option
 					else
-						--table.insert(OptionsTable, OptionInTable)
+						table.insert(OptionsTable, OptionInTable)
 						table.insert(DropdownSettings.Items.Selected, OptionInTable)
 						RefreshSelected()
 					end
 
 					local Success, Response = pcall(function()
-						--if #OptionsTable > 1 then
-							--local callbackTable = {}
-							--for i, v in pairs(OptionsTable) do
-								--table.insert(callbackTable, v.Option.Name)
-							--end
-							--DropdownSettings.Callback(callbackTable)
-						--else
+						if #OptionsTable > 1 then
+							local callbackTable = {}
+							for i, v in pairs(OptionsTable) do
+								table.insert(callbackTable, v.Option.Name)
+							end
+							DropdownSettings.Callback(callbackTable)
+						else
 							DropdownSettings.Callback(Option)
-						--end
+						end
 					end)
 					if not Success then
 						Error('Callback Error')
