@@ -1617,7 +1617,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		--Animate
 		wait(0.1)
 		if FirstTab then
-			print("uwu")
 			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackground
 			TopTabButton.Image.ImageColor3 = SelectedTheme.TabTextColor
 			TopTabButton.Title.TextColor3 = SelectedTheme.TabTextColor
@@ -1631,7 +1630,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = .2,TextColor3 = Color3.fromRGB(205, 205, 205)}):Play()	
 		else
 			if not CustomFirstTab then
-				print("sele")
 				FirstTab = Name
 
 				TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
@@ -1647,7 +1645,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				TweenService:Create(SideTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0}):Play()
 				TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 			elseif ActiveTabBySelectionCuzImCoolItsSoLongOmgUznOntopSexMeUwU then
-				print("SELEEEECT")
 				FirstTab = Name
 
 				TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
