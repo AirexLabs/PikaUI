@@ -1625,9 +1625,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			TweenService:Create(SideTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0,ImageColor3 = Color3.fromRGB(205, 205, 205)}):Play()
 			TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = .2,TextColor3 = Color3.fromRGB(205, 205, 205)}):Play()	
 		else
-			if FirstTab or ActiveTabBySelectionCuzImCoolItsSoLongOmgUznOntopSexMeUwU then
-				FirstTab = Name
-			end
+			FirstTab = Name
 
 			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
 			TopTabButton.Image.ImageColor3 = SelectedTheme.SelectedTabTextColor
