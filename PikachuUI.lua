@@ -1,6 +1,6 @@
 --[[
 
-Pepper's Modified ArrayField Interface Suite
+Pepper's ArrayField Interface Suite
 by Pepper
 
 Original by Sirius
@@ -1640,6 +1640,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		end
 
 		local function Pick()
+			print("WEEE WOOOO WEEEE WOOOOO WEEEEE WOOOOO")
 			if Minimised then return end
 			TweenService:Create(TopTabButton, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(TopTabButton.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
