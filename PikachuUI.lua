@@ -1617,6 +1617,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		--Animate
 		wait(0.1)
 		if FirstTab then
+			print("uwu")
 			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackground
 			TopTabButton.Image.ImageColor3 = SelectedTheme.TabTextColor
 			TopTabButton.Title.TextColor3 = SelectedTheme.TabTextColor
@@ -1630,25 +1631,50 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = .2,TextColor3 = Color3.fromRGB(205, 205, 205)}):Play()	
 		else
 			if not CustomFirstTab then
+				print("sele")
 				FirstTab = Name
+
+				TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
+				TopTabButton.Image.ImageColor3 = SelectedTheme.SelectedTabTextColor
+				TopTabButton.Title.TextColor3 = SelectedTheme.SelectedTabTextColor
+				TweenService:Create(TopTabButton.Shadow, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {ImageTransparency = 0.9}):Play()
+				TweenService:Create(TopTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0}):Play()
+				TweenService:Create(TopTabButton, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
+				TweenService:Create(TopTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
+
+				SideTabButton.Image.ImageColor3 = Color3.fromRGB(255, 255, 255)
+				SideTabButton.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TweenService:Create(SideTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0}):Play()
+				TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 			elseif ActiveTabBySelectionCuzImCoolItsSoLongOmgUznOntopSexMeUwU then
+				print("SELEEEECT")
 				FirstTab = Name
+
+				TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
+				TopTabButton.Image.ImageColor3 = SelectedTheme.SelectedTabTextColor
+				TopTabButton.Title.TextColor3 = SelectedTheme.SelectedTabTextColor
+				TweenService:Create(TopTabButton.Shadow, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {ImageTransparency = 0.9}):Play()
+				TweenService:Create(TopTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0}):Play()
+				TweenService:Create(TopTabButton, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
+				TweenService:Create(TopTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
+
+				SideTabButton.Image.ImageColor3 = Color3.fromRGB(255, 255, 255)
+				SideTabButton.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TweenService:Create(SideTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0}):Play()
+				TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 			else
-				return
+				TopTabButton.BackgroundColor3 = SelectedTheme.TabBackground
+				TopTabButton.Image.ImageColor3 = SelectedTheme.TabTextColor
+				TopTabButton.Title.TextColor3 = SelectedTheme.TabTextColor
+				TweenService:Create(TopTabButton, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.7}):Play()
+				TweenService:Create(TopTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0.2}):Play()
+				TweenService:Create(TopTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0.2}):Play()
+				TweenService:Create(TopTabButton.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
+				TweenService:Create(TopTabButton.Shadow, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {ImageTransparency = 0.7}):Play()
+
+				TweenService:Create(SideTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0,ImageColor3 = Color3.fromRGB(205, 205, 205)}):Play()
+				TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = .2,TextColor3 = Color3.fromRGB(205, 205, 205)}):Play()	
 			end
-
-			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
-			TopTabButton.Image.ImageColor3 = SelectedTheme.SelectedTabTextColor
-			TopTabButton.Title.TextColor3 = SelectedTheme.SelectedTabTextColor
-			TweenService:Create(TopTabButton.Shadow, TweenInfo.new(0.3, Enum.EasingStyle.Quint), {ImageTransparency = 0.9}):Play()
-			TweenService:Create(TopTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0}):Play()
-			TweenService:Create(TopTabButton, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
-			TweenService:Create(TopTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
-
-			SideTabButton.Image.ImageColor3 = Color3.fromRGB(255, 255, 255)
-			SideTabButton.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-			TweenService:Create(SideTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0}):Play()
-			TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = 0}):Play()
 
 		end
 
