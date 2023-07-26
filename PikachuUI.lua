@@ -1610,7 +1610,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		TopTabButton.UIStroke.Color = SelectedTheme.TabStroke
 		--Animate
 		wait(0.1)
-		if FirstTab then
+		if ActualFirstTab then
 			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackground
 			TopTabButton.Image.ImageColor3 = SelectedTheme.TabTextColor
 			TopTabButton.Title.TextColor3 = SelectedTheme.TabTextColor
