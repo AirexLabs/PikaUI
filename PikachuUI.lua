@@ -1633,6 +1633,8 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				FirstTab = Name
 			elseif ActiveTabBySelectionCuzImCoolItsSoLongOmgUznOntopSexMeUwU then
 				FirstTab = Name
+			else
+				return
 			end
 
 			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
