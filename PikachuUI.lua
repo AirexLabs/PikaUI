@@ -1541,7 +1541,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	local FirstTab = false
 	ArrayFieldQuality.Window = {Tabs = {}}
 	local Window = ArrayFieldQuality.Window
-	function Window:CreateTab(Name,Image)
+	function Window:CreateTab(Name,Image,ActiveTabBySelectionCuzImCoolItsSoLongOmgUznOntopSexMeUwU)
 		Window.Tabs[Name]={Elements = {}}
 		local Tab = Window.Tabs[Name]
 		local SDone = false
@@ -1610,6 +1610,9 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		--Animate
 		wait(0.1)
 		if FirstTab then
+			if ActiveTabBySelectionCuzImCoolItsSoLongOmgUznOntopSexMeUwU then
+				FirstTab = Name
+			end
 			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackground
 			TopTabButton.Image.ImageColor3 = SelectedTheme.TabTextColor
 			TopTabButton.Title.TextColor3 = SelectedTheme.TabTextColor
@@ -1622,7 +1625,9 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			TweenService:Create(SideTabButton.Image, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {ImageTransparency = 0,ImageColor3 = Color3.fromRGB(205, 205, 205)}):Play()
 			TweenService:Create(SideTabButton.Title, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {TextTransparency = .2,TextColor3 = Color3.fromRGB(205, 205, 205)}):Play()	
 		else
-			FirstTab = Name
+			if FirstTab or ActiveTabBySelectionCuzImCoolItsSoLongOmgUznOntopSexMeUwU then
+				FirstTab = Name
+			end
 
 			TopTabButton.BackgroundColor3 = SelectedTheme.TabBackgroundSelected
 			TopTabButton.Image.ImageColor3 = SelectedTheme.SelectedTabTextColor
@@ -1640,7 +1645,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		end
 
 		local function Pick()
-			print("WEEE WOOOO WEEEE WOOOOO WEEEEE WOOOOO")
 			if Minimised then return end
 			TweenService:Create(TopTabButton, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(TopTabButton.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
