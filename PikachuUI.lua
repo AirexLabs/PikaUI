@@ -1544,7 +1544,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	Elements.UIPageLayout.FillDirection = Enum.FillDirection.Horizontal
 
 	-- Tab
-	local FirstTab = true
+	local FirstTab = false
 	local ActualFirstTab = false
 	ArrayFieldQuality.Window = {Tabs = {}}
 	local Window = ArrayFieldQuality.Window
