@@ -1220,19 +1220,14 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		CustomFirstTab = true
 	end
 
-	print("WHAT THE FUCK")
 	pcall(function()
-		print("ran §1")
 		if not Settings.ConfigurationSaving.FileName then
 			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
 		end
-		print("ran §3241")
 		--if not isfolder(ArrayFieldLibrary.."/".."Configuration Folders") then
 			--print("oga")
 		--end
-		print("vfesfgewrgesg")
 		if Settings.ConfigurationSaving.Enabled == nil then
-			print("ran trhrtahawsrhrtdh§1")
 			Settings.ConfigurationSaving.Enabled = false
 		end
 		CFileName = Settings.ConfigurationSaving.FileName
@@ -1240,11 +1235,8 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		CEnabled = Settings.ConfigurationSaving.Enabled
 
 		if Settings.ConfigurationSaving.Enabled then
-			print("a")
 			if not isfolder(ConfigurationFolder) then
-				print("BB")
 				makefolder(ConfigurationFolder)
-				print("CC")
 			end	
 		end
 	end)
@@ -2480,7 +2472,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 				for _,o in pairs(NewOption) do
 
 					if typeof(NewOption) == 'table' then
-
 						DropdownSettings.Items.Selected = NewOption
 					else
 						DropdownSettings.Items.Selected = {NewOption}
