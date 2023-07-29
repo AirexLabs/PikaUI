@@ -1209,6 +1209,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		CustomFirstTab = true
 	end
 
+	print("WHAT THE FUCK")
 	pcall(function()
 		print("ran §1")
 		if not Settings.ConfigurationSaving.FileName then
