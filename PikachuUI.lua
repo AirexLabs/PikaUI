@@ -1219,7 +1219,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		end
 		print("ran §3241")
 		if not isfolder(ArrayFieldLibrary.."/".."Configuration Folders") then
-
+			print("oga")
 		end
 		print("vfesfgewrgesg")
 		if Settings.ConfigurationSaving.Enabled == nil then
