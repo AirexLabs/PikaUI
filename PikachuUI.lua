@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.05
+V1.06
 
 ]]
 
@@ -2175,6 +2175,8 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			DropdownSettings.Items = {
 				Selected = {Default = DropdownSettings.Selected or nil}
 			}
+
+			DropdownSettings.callbackTable = {}
 			AddInfos(Dropdown,DropdownSettings,'dropdown')
 			DropdownSettings.Locked = false
 			local Multi = DropdownSettings.MultipleOptions or false
