@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.04
+V1.05
 
 ]]
 
@@ -359,10 +359,10 @@ local function SaveConfiguration()
 			Data[i] = PackColor(v.Color)
 		else
 			Data[i] = v.CurrentValue or v.CurrentKeybind or v.Color or v.callbackTable
-			print(v.callbackTable)
-			print(typeof(v.callbackTable))
-			if typeof(v.callbackTable) == "table" then
-				for c, d in pairs(v.callbackTable) do
+			print(Data[i])
+			print(typeof(Data[i]))
+			if typeof(Data[i]) == "table" then
+				for c, d in pairs(Data[i]) do
 					print(c, d)
 				end
 			end
