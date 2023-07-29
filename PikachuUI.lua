@@ -11,6 +11,8 @@ Arrays  | Designing + Programming + New Features
 
 ]]
 
+print("WWTATASDF")
+
 
 
 local Release = "Release 2A"
@@ -1207,7 +1209,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 	if Settings.CustomFirstTab then
 		CustomFirstTab = true
-		print("ok tf")
 	end
 
 	print("WHAT THE FUCK")
