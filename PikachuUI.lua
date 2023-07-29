@@ -1224,8 +1224,11 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 		CEnabled = Settings.ConfigurationSaving.Enabled
 
 		if Settings.ConfigurationSaving.Enabled then
+			print("a")
 			if not isfolder(ConfigurationFolder) then
+				print("BB")
 				makefolder(ConfigurationFolder)
+				print("CC")
 			end	
 		end
 	end)
