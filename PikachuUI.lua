@@ -11,10 +11,6 @@ Arrays  | Designing + Programming + New Features
 
 ]]
 
-print("WWTATASDF")
-
-
-
 local Release = "Release 2A"
 local NotificationDuration = 6.5
 local ArrayFieldFolder = "ArrayField"
