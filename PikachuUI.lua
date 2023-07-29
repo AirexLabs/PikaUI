@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.02
+V1.03
 
 ]]
 
@@ -358,7 +358,7 @@ local function SaveConfiguration()
 		if v.Type == "ColorPicker" then
 			Data[i] = PackColor(v.Color)
 		else
-			Data[i] = v.CurrentValue or v.CurrentKeybind or v.Color or v.CurrentOption
+			Data[i] = v.CurrentValue or v.CurrentKeybind or v.Color or v.callbackTable
 			print(v.CurrentOption)
 		end
 	end	
@@ -2363,17 +2363,17 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 						local Success, Response = pcall(function()
 							if #OptionsTable > 1 then
-								local callbackTable = {}
+								DropdownSettings.callbackTable = {}
 								for i, v in pairs(OptionsTable) do
-									table.insert(callbackTable, v.Option.Name)
+									table.insert(DropdownSettings.callbackTable, v.Option.Name)
 								end
-								DropdownSettings.Callback(callbackTable)
+								DropdownSettings.Callback(DropdownSettings.callbackTable)
 							else
-								local callbackTable = {}
+								DropdownSettings.callbackTable = {}
 								for i, v in pairs(OptionsTable) do
-									table.insert(callbackTable, v.Option.Name)
+									table.insert(DropdownSettings.callbackTable, v.Option.Name)
 								end
-								DropdownSettings.Callback(tostring(callbackTable[1]))
+								DropdownSettings.Callback(tostring(DropdownSettings.callbackTable[1]))
 							end
 						end)
 
@@ -2399,12 +2399,13 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 					local Success, Response = pcall(function()
 						if #OptionsTable > 1 then
-							local callbackTable = {}
+							DropdownSettings.callbackTable = {}
 							for i, v in pairs(OptionsTable) do
-								table.insert(callbackTable, v.Option.Name)
+								table.insert(DropdownSettings.callbackTable, v.Option.Name)
 							end
-							DropdownSettings.Callback(callbackTable)
+							DropdownSettings.Callback(DropdownSettings.callbackTable)
 						else
+							DropdownSettings.callbackTable = {Option}
 							DropdownSettings.Callback(Option)
 						end
 					end)
