@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.01
+V1.02
 
 ]]
 
@@ -359,6 +359,7 @@ local function SaveConfiguration()
 			Data[i] = PackColor(v.Color)
 		else
 			Data[i] = v.CurrentValue or v.CurrentKeybind or v.Color or v.CurrentOption
+			print(v.CurrentOption)
 		end
 	end	
 	writefile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension, tostring(HttpService:JSONEncode(Data)))
