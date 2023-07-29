@@ -1210,13 +1210,17 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	end
 
 	pcall(function()
+		print("ran §1")
 		if not Settings.ConfigurationSaving.FileName then
 			Settings.ConfigurationSaving.FileName = tostring(game.PlaceId)
 		end
+		print("ran §3241")
 		if not isfolder(ArrayFieldLibrary.."/".."Configuration Folders") then
 
 		end
+		print("vfesfgewrgesg")
 		if Settings.ConfigurationSaving.Enabled == nil then
+			print("ran trhrtahawsrhrtdh§1")
 			Settings.ConfigurationSaving.Enabled = false
 		end
 		CFileName = Settings.ConfigurationSaving.FileName
