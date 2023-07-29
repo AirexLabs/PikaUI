@@ -9,11 +9,13 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.0
+V1.01
 
 ]]
 
-getgenv().Settings.FinishedLoading = false
+getgenv().ArrayField = {
+    FinishedLoading = false
+}
 
 local Release = "Release 2A"
 local NotificationDuration = 6.5
@@ -3579,7 +3581,7 @@ function ArrayFieldLibrary:LoadConfiguration()
 			if isfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension) then
 				LoadConfiguration(readfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension))
 				ArrayFieldLibrary:Notify({Title = "Configuration Loaded", Content = "The configuration file for this script has been loaded from a previous session"})
-				getgenv().Settings.FinishedLoading = true
+				getgenv().ArrayField.FinishedLoading = true
 			end
 		end)
 	end
