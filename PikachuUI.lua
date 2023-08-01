@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.08
+V1.09
 
 ]]
 
@@ -3587,6 +3587,7 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 		if not SearchHided then SearchHided = true spawn(CloseSearch)  end
 		Hidden = true
 		Hide(ToggleUIK)
+		print("Woo")
 	end
 end)
 
@@ -3597,9 +3598,11 @@ UserInputService.InputBegan:Connect(function(input, processed)
 			Hidden = false
 			Unhide()
 		else
+			print("okkookkk")
 			if not SearchHided then spawn(CloseSearch) end
 			Hidden = true
 			Hide(ToggleUIK)
+			print("Asadad")
 		end
 	end
 end)
