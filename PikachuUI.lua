@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.06
+V1.07
 
 ]]
 
@@ -850,7 +850,7 @@ function Hide()
 		FadeDescription(nil,true)
 	end)
 	Debounce = true
-	ArrayFieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping RightShift", Duration = 7})
+	ArrayFieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping "..tostring(ToggleUIK), Duration = 7})
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
 	TweenService:Create(Main.Topbar, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 45)}):Play()
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
@@ -1193,6 +1193,7 @@ function Minimise()
 end
 
 local CustomFirstTab = false
+local ToggleUIK = Enum.KeyCode.RightShift
 
 function ArrayFieldLibrary:CreateWindow(Settings)
 	ArrayField.Enabled = false
@@ -1218,6 +1219,10 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 	if Settings.CustomFirstTab then
 		CustomFirstTab = true
+	end
+
+	if Settings.ToggleUI then
+		ToggleUIK = Settings.ToggleUI
 	end
 
 	pcall(function()
@@ -2683,7 +2688,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			UserInputService.InputBegan:Connect(function(input, processed)
 
 				if CheckingForKey then
-					if input.KeyCode ~= Enum.KeyCode.Unknown and input.KeyCode ~= Enum.KeyCode.RightShift then
+					if input.KeyCode ~= Enum.KeyCode.Unknown and input.KeyCode ~= ToggleUIK then
 						local SplitMessage = string.split(tostring(input.KeyCode), ".")
 						local NewKeyNoEnum = SplitMessage[3]
 						Keybind.KeybindFrame.KeybindBox.Text = tostring(NewKeyNoEnum)
@@ -3585,7 +3590,7 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 end)
 
 UserInputService.InputBegan:Connect(function(input, processed)
-	if (input.KeyCode == Enum.KeyCode.RightShift and not processed) then
+	if (input.KeyCode == ToggleUIK and not processed) then
 		if Debounce then return end
 		if Hidden then
 			Hidden = false
