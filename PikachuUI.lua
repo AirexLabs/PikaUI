@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.09
+V1.10
 
 ]]
 
@@ -3592,7 +3592,7 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 end)
 
 UserInputService.InputBegan:Connect(function(input, processed)
-	if (input.KeyCode == ToggleUIK and not processed) then
+	if input.KeyCode == ToggleUIK then
 		if Debounce then return end
 		if Hidden then
 			Hidden = false
