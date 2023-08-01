@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.07
+V1.08
 
 ]]
 
@@ -842,7 +842,7 @@ function CloseSideBar()
 	wait(0.2)
 	Debounce = false
 end
-function Hide()
+function Hide(ToggleUIK)
 	if not SideBarClosed then
 		spawn(CloseSideBar)
 	end
@@ -850,7 +850,7 @@ function Hide()
 		FadeDescription(nil,true)
 	end)
 	Debounce = true
-	ArrayFieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping "..next(Enum.KeyCode, next(Enum.KeyCode, ToggleUIK) == ToggleUIK), Duration = 7})
+	ArrayFieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping "..tostring(ToggleUIK):match("Enum.KeyCode.(.*)"), Duration = 7})
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
 	TweenService:Create(Main.Topbar, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 45)}):Play()
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
@@ -3586,7 +3586,7 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 	else
 		if not SearchHided then SearchHided = true spawn(CloseSearch)  end
 		Hidden = true
-		Hide()
+		Hide(ToggleUIK)
 	end
 end)
 
@@ -3599,7 +3599,7 @@ UserInputService.InputBegan:Connect(function(input, processed)
 		else
 			if not SearchHided then spawn(CloseSearch) end
 			Hidden = true
-			Hide()
+			Hide(ToggleUIK)
 		end
 	end
 end)
