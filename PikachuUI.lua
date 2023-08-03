@@ -3587,7 +3587,6 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 		if not SearchHided then SearchHided = true spawn(CloseSearch)  end
 		Hidden = true
 		Hide(ToggleUIK)
-		print("Woo")
 	end
 end)
 
@@ -3598,11 +3597,9 @@ UserInputService.InputBegan:Connect(function(input, processed)
 			Hidden = false
 			Unhide()
 		else
-			print("okkookkk")
 			if not SearchHided then spawn(CloseSearch) end
 			Hidden = true
 			Hide(ToggleUIK)
-			print("Asadad")
 		end
 	end
 end)
@@ -3641,5 +3638,20 @@ function ArrayFieldLibrary:LoadConfiguration()
 		end)
 	end
 end
+
+function ArrayFieldLibrary:ToggleUI()
+	if Debounce then return end
+	if Hidden then
+		Hidden = false
+		Minimised = false
+		Unhide()
+	else
+		if not SearchHided then SearchHided = true spawn(CloseSearch)  end
+		Hidden = true
+		Hide(ToggleUIK)
+	end
+end
+
+
 task.delay(9, ArrayFieldLibrary.LoadConfiguration, ArrayFieldLibrary)
 return ArrayFieldLibrary
