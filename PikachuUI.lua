@@ -127,7 +127,7 @@ local spawn = task.spawn
 local delay = task.delay
 
 --Studio
-if game["Run Service"]:IsStudio() then
+if game:GetService("RunService"):IsStudio() then
 	function gethui() return ArrayField end local http_request = nil local syn = {protect_gui = false,request = false,}local http = nil function writefile(tt,t,ttt)end function isfolder(t)end function makefolder(t)end function isfile(r)end function readfile(t)end
 end
 
@@ -136,20 +136,7 @@ pcall(function()
 	_G.LastRayField.Enabled = false
 end)
 local ParentObject = function(Gui)
-	local success, failure = pcall(function()
-		if get_hidden_gui or gethui then
-			local hiddenUI = get_hidden_gui or gethui
-			Gui.Parent = hiddenUI()
-		elseif (not is_sirhurt_closure) and (syn and syn.protect_gui) then
-			syn.protect_gui(Gui)
-			Gui.Parent = CoreGui
-		elseif CoreGui then
-			Gui.Parent = CoreGui
-		end
-	end)
-	if not success and failure then
-		Gui.Parent = LocalPlayer:FindFirstChildWhichIsA("PlayerGui")
-	end
+	Gui.Parent = get_hidden_gui or gethui or game:GetService("CoreGui")
 	_G.LastRayField = ArrayField
 end
 ParentObject(ArrayField)
@@ -1223,7 +1210,6 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 
 	if Settings.ToggleUI then
 		ToggleUIK = Settings.ToggleUI
-		print("aaaaaa")
 	end
 
 	pcall(function()
