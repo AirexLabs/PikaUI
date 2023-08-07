@@ -120,8 +120,15 @@ local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 local LocalPlayer = game:GetService('Players').LocalPlayer
 
+local id = 13853811008
+
+if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled and not UserInputService.MouseEnabled and 1==1 then
+	id = 14353377059
+end
+
 -- Interface Management
-local ArrayField = game:GetObjects("rbxassetid://13853811008")[1]
+local ArrayField = game:GetObjects("rbxassetid://"..id)[1]
+
 ArrayField.Enabled = false
 local spawn = task.spawn
 local delay = task.delay
