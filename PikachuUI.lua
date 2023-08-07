@@ -127,7 +127,7 @@ if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled and no
 end
 
 -- Interface Management
-local ArrayField = game:GetObjects("rbxassetid://"..id)[1]
+local ArrayField = game:GetObjects("rbxassetid://14353377059")[1]
 
 ArrayField.Enabled = false
 local spawn = task.spawn
