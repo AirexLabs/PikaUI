@@ -1315,11 +1315,11 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			Settings.KeySettings.FileName = "No file name specified"
 		end
 
-		if isfile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
-			if readfile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) == Settings.KeySettings.Key then
-				Passthrough = true
-			end
-		end
+		--if isfile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
+			--if readfile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) == Settings.KeySettings.Key then
+			--	Passthrough = true
+			--end
+		--end
 
 		if not Passthrough then
 			local AttemptsRemaining = math.random(2,6)
@@ -1429,12 +1429,12 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					end)
 					wait(0.51)
 					Passthrough = true
-					if Settings.KeySettings.SaveKey then
-						if writefile then
-							writefile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, Settings.KeySettings.Key)
-						end
-						ArrayFieldLibrary:Notify({Title = "Key System", Content = "The key for this script has been saved successfully"})
-					end
+					--if Settings.KeySettings.SaveKey then
+						--if writefile then
+						--	writefile(ArrayFieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, Settings.KeySettings.Key)
+						--end
+						--ArrayFieldLibrary:Notify({Title = "Key System", Content = "The key for this script has been saved successfully"})
+					--end
 				else
 					if AttemptsRemaining == 0 then
 						TweenService:Create(KeyMain, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
