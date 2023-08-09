@@ -123,10 +123,6 @@ local LocalPlayer = game:GetService('Players').LocalPlayer
 -- Interface Management
 local ArrayField = game:GetObjects("rbxassetid://13853811008")[1]
 
-if game:GetService("UserInputService").TouchEnabled and game:GetService("UserInputService").KeyboardEnabled == false then
-	ArrayField = game:GetObjects("rbxassetid://14353377059")[1]
-end
-
 ArrayField.Enabled = false
 local spawn = task.spawn
 local delay = task.delay
