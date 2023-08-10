@@ -9,7 +9,7 @@ Original Arrayfield by Meta
 -------------------------------
 Arrays  | Designing + Programming + New Features
 
-V1.10
+V1.11
 
 ]]
 
@@ -360,6 +360,7 @@ local function SaveConfiguration()
 			Data[i] = PackColor(v.Color)
 		else
 			Data[i] = v.CurrentValue or v.CurrentKeybind or v.Color or v.callbackTable
+			--[[
 			print(Data[i])
 			print(typeof(Data[i]))
 			if typeof(Data[i]) == "table" then
@@ -367,6 +368,7 @@ local function SaveConfiguration()
 					print(c, d)
 				end
 			end
+			]]--
 		end
 	end	
 	writefile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension, tostring(HttpService:JSONEncode(Data)))
