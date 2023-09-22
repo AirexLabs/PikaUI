@@ -2589,6 +2589,17 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					Dropdown.Selected.Text = ''
 				end
 			end
+			function DropdownSettings:Clear()
+				if DropdownSettings.Items == nil then
+					Error('Options not found.')
+				else
+					for i, v in ipairs(DropdownSettings.Items) do
+						DropdownSettings.Items[v].Option:Destroy()
+						table.remove(DropdownSettings.Items,table.find(DropdownSettings.Items,v))
+					end
+				end
+				Dropdown.Selected.Text = ''
+			end
 
 			function DropdownSettings:Destroy()
 				Dropdown:Destroy()
