@@ -1212,7 +1212,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "Arrayfield Interface Suite"
 	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius | Meta"
 	if Settings.LoadingTitle ~= "Arrayfield Interface Suite" then
-		LoadingFrame.Version.Text = "Arrayfield UI"
+		LoadingFrame.Version.Text = "Airex | Arrayfield UI"
 	end
 	Topbar.Visible = false
 	Elements.Visible = false
